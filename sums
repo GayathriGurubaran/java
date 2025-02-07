@@ -1,0 +1,51 @@
+1. Encoding Three Strings: Anand was assigned the task of coming up with an encoding mechanism for any given three strings. He has come up with the below plan.
+
+Input Format
+
+STEP ONE: Given any three strings, break each string into 3 parts each. For example – If the three strings are as below - Input1= “John” Input2= “Johny” Input3= “Janardhan”
+
+Constraints
+
+1 <= String.Length <= 100
+
+Output Format
+
+Output1 = “JJoJan” Output2 = “ohhard” Output3 = “NNYHAN”
+  
+“John” should be split into “J”, “oh”, “n” as the FRONT, MIDDLE and END parts respectively.
+“Johny” should be split into “Jo”, “h”, “ny” as the FRONT, MIDDLE and END parts respectively.
+“Janardhan” should be split into “Jan”, “ard”, “han” as the FRONT, MIDDLE and END parts respectively.
+Output1 = “J” + “Jo” + “Jan” = “JJoJan” Output2 = “oh” + “h” + “ard” = “ohhard” Output3 = “n” + “ny” + “han” = “nnyhan”
+
+2.Detective Bakshi while solving a case stumbled upon a letter which had many words whose one character was missing
+i.e. one character in the word was replaced by an underscore. For e.g.“Fi_er”. He also found thin strips of paper which
+had a group of words separated by colons, for e.g. “Fever:filer:Filter:Fixer:fiber:fibre:tailor:offer”. He could figure out
+that the word whose one character was missing was one of the possible words from the thin strips of paper. Detective Bakshi has
+approached you (a computer programmer) asking for help in identifying the possible words for each incomplete word.
+
+input1 = “Fi_er” input2 = “Fever:filer:Filter:Fixer:fiber:fibre:tailor:offer” output string should be returned as “FILERFIXERFIBER”
+
+Two input String given and its not case sensitive
+
+Constraints
+
+1 <= str.length <= 500
+
+Output Format
+
+Print the possible matching words in string
+
+
+Sample Input 0
+
+Fi_er
+Fever:filer:Filter:Fixer:fiber:fibre:tailor:offer
+Sample Output 0
+
+FILERFIXERFIBER
+Sample Input 1
+
+Fi_er
+tailor:offer:beggar
+Sample Output 1
+
