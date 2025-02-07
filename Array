@@ -1,1 +1,9 @@
-
+In single memory the group of elements of same kind is stored .
+* CLASS
+  A class is a blueprint or template for creating objects. 
+  It defines properties (variables) and behaviors (methods) that objects of that class will have.
+  Think of a class as a blueprint for a car. The blueprint defines characteristics like the car's color, model, and engine type, but it is not an actual car. You need to create a car (object) based on that blueprint.
+*OBJECT
+   An object is an instance of a class. When we create an object, it gets its own copy of the 
+   variables and can use the methods defined in the class.
+   For example, a real car (like a Tesla Model X) is an object created from the blueprint (class Car).
