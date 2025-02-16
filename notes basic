@@ -19,4 +19,78 @@ Java: Telusko
 
 4. After that, it was called Oak and was developed as a part of the Green project.
 
+Functions :
+  it is a block of code that performs a specific task and can be reused .
+  eg : returnType functionName(parameters) {
+    // Function Body
+    return value; // (if returnType is not void)
+}
+
+
+void meaning :
+   public class Example {
+    // A function that prints a message (no return)
+    static void greet() {
+        System.out.println("Hello, welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        greet();  // Calling the function
+    }
+}
+op : 
+ Hello, welcome to Java!
+
+
+When a function does not return any value, we use void as its return type.
+
+Meaning: The function executes some task but does not return a value to the caller.
+
+Functions with return type (Not void):
+  If a function returns a value, we must specify its return type (e.g., int, double, String).
+
+eg :
+
+  public class Example {
+    // Function that returns an integer
+    static int add(int a, int b) { // returning int type that (static int )
+        return a + b;  // Returning sum
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 10);  // Storing returned value
+        System.out.println("Sum: " + result);
+    }
+}
+
+types of functions : 
+1. predefined functions :
+   eg : Math.pow(x, y), Math.sqrt(x), Math.max(a, b), etc.
+2. user defined functions :
+   which is defined by us 
+3. Functions with parameters and return type 
+4. Functions overloading :
+    saem name with different parameters 
+eg : public class Example {
+    // Function to multiply two numbers
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    // Overloaded function with three parameters
+    static int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(multiply(5, 10));     // Calls first multiply()
+        System.out.println(multiply(2, 3, 4));   // Calls second multiply()
+    }
+}
+
+5. functions with variable arguments 
+6. Pass by value 
+  
+
+
    
