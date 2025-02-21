@@ -90,7 +90,127 @@ eg : public class Example {
 
 5. functions with variable arguments 
 6. Pass by value 
-  
+------------------------------------------------------------------------------------------
 
+Static :-
+   Why we use static 
+
+Original code for reusion :-
+
+class RecursionExample {
+    static int factorial(int n) {
+        if (n == 1) {  // 🛑 Base case: Stop when n = 1
+            return 1;
+        }
+        return n * factorial(n - 1); // 🔁 Recursive call: Call itself
+    }
+
+    public static void main(String[] args) {
+        int num = 5;
+        System.out.println("Factorial of " + num + " is: " + factorial(num));
+    }
+}
+
+Question :- Why we use static there 
+ Why Use static?
+👉 In Java, if we call a method inside main(), it must be either:
+✅ A static method
+✅ Called using an object
+
+Since main() is static, it can only call another static method directly.
+
+If we remove static, the compiler will give an error saying:
+
+"Cannot make a static reference to a non-static method"
+(Meaning: main() is static, but factorial() isn’t, so it won’t work.)
+
+
+  📌 What If We Don't Use static?
+If we remove static, we need to create an object to call the function:
+
+class RecursionExample {
+    int factorial(int n) {
+        if (n == 1) return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        RecursionExample obj = new RecursionExample(); // 👈 Create an object
+        System.out.println("Factorial of 5: " + obj.factorial(5)); 
+    }
+}
+
+📌 1️⃣ What Does static Mean?
+👉 In Java, static means "belongs to the class, not to objects."
+👉 If a method or variable is static, it is shared among all objects of the class.
+
+🔴 Without static → Each object has its own copy of the method/variable.
+🟢 With static → There is only one copy, shared by all objects.
 
    
+class Student {
+    static String college = "MVIT"; // 👈 `static` variable (shared)
+    String name; // 👈 Normal variable (unique for each object)
+
+    Student(String name) {
+        this.name = name;
+    }
+
+    void show() {
+        System.out.println(name + " studies at " + college);
+    }
+}
+
+public class StaticExample {
+    public static void main(String[] args) {
+        Student s1 = new Student("Gayathri");
+        Student s2 = new Student("Jaya");
+
+        s1.show();
+        s2.show();
+    }
+}
+📌 1️⃣ Can We Change a static Variable?
+Yes, we can change a static variable! But when we change it, it affects all objects because static variables are shared.
+
+🔴 Example:
+
+class Student {
+    static String college = "MVIT"; // 👈 Static variable (shared)
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+
+    void show() {
+        System.out.println(name + " studies at " + college);
+    }
+}
+public class StaticChangeExample {
+    public static void main(String[] args) {
+        Student s1 = new Student("Gayathri");
+        Student s2 = new Student("Jaya");
+
+        s1.show(); // ✅ MVIT
+        s2.show(); // ✅ MVIT
+
+        // 🔥 Change the static variable
+        s1.college = "IIT Madras"; 
+
+        s1.show(); // ❌ Now changed to "IIT Madras"
+        s2.show(); // ❌ Now changed to "IIT Madras"
+    }
+}
+
+📌 2️⃣ But, What's the Right Way?
+👉 Instead of s1.college, it's better to use Student.college because college is static.
+
+🔴 Better Way:
+
+Student.college = "IIT Madras"; // ✅ Best way
+👉 Why?
+Because college belongs to the class, not just s1. Using Student.college makes it clear that we are changing a static variable.
+
+---------------------------------------------------------------------------------------
+
