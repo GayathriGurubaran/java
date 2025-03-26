@@ -7,3 +7,8 @@ In single memory the group of elements of same kind is stored .
    An object is an instance of a class. When we create an object, it gets its own copy of the 
    variables and can use the methods defined in the class.
    For example, a real car (like a Tesla Model X) is an object created from the blueprint (class Car).
+
+
+ARRAY INPUT:
+      int[] arr = new int[n];
+       
