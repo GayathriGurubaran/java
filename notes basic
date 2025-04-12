@@ -18,6 +18,7 @@ Java: Telusko
 3.Firstly, it was called "Greentalk" by James Gosling, and the file extension was .gt.
 
 4. After that, it was called Oak and was developed as a part of the Green project.
+------------------------------------------------------------------------------------------------
 
 Functions :
   it is a block of code that performs a specific task and can be reused .
@@ -62,6 +63,7 @@ eg :
         System.out.println("Sum: " + result);
     }
 }
+------------------------------------------------------------------------
 
 types of functions : 
 1. predefined functions :
@@ -211,6 +213,97 @@ public class StaticChangeExample {
 Student.college = "IIT Madras"; // ✅ Best way
 👉 Why?
 Because college belongs to the class, not just s1. Using Student.college makes it clear that we are changing a static variable.
+--------------------------------------------------------------------------------------------------------------------------------------------
 
+In how many ways we can write a Java program?
+
+1) By changing the sequence of the modifiers, method prototype is not changed in Java.
+
+Let's see the simple code of the main() method.
+
+* static public void main(String args[])  
+
+2) The subscript notation in the Java array can be used after type, before the variable or after the variable.
+
+Let's see the different codes to write the main method.
+
+public static void main(String[] args)  
+public static void main(String []args)  
+public static void main(String args[])  
+
+
+3) You can provide var-args support to the main() method by passing 3 ellipses (dots)
+
+Let's see the simple code of using var-args in the main() method. We will learn about var-args later in the Java New Features chapter.
+
+*public static void main(String... args)  
+----------------------------------------------------------------------------------------------------------------
+
+Difference between the String... args and String[] args :-
+
+
+ Example 1: main(String[] args) vs main(String... args)
+
+  *Both are same in behavior.
+
+1. public class FoodTest1 {
+    public static void main(String[] args) {
+        System.out.println("Welcome to the party!");
+        for (String item : args) {
+            System.out.println("You brought: " + item);
+        }
+    }
+}
+
+
+2.public class FoodTest1 {
+    public static void main(String... args) {
+        System.out.println("Welcome to the party!");
+        for (String item : args) {
+            System.out.println("You brought: " + item);
+        }
+    }
+}
+
+
+
+gives the same output , but the difference will be in using this in the our own method 
+
+
+ Example 2: Using String[] in your own method
+
+public class FoodTest2 {
+    static void serveFood(String[] items) {
+        for (String item : items) {
+            System.out.println("Serving: " + item);
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] order = {"Donut", "Tea", "Puffs"};
+        serveFood(order);  // ❗ You must create array and pass it
+    }
+}
+
+
+ Example 3: Using String... (var-args) in your own method
+
+public class FoodTest3 {
+    static void serveFood(String... items) {
+        for (String item : items) {
+            System.out.println("Serving: " + item);
+        }
+    }
+
+    public static void main(String[] args) {
+        serveFood("Ice Cream", "Milkshake", "Cupcake");  // 😍 No need to create array!
+        serveFood(); // ✅ You can even call with no items!
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+
+
+     
 ---------------------------------------------------------------------------------------
 
