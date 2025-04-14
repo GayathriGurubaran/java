@@ -302,8 +302,62 @@ public class FoodTest3 {
 }
 
 -----------------------------------------------------------------------------------------------
+Internal details at compile time :-
+         At compile time, the Java file is compiled by Java compiler (It does not interact with OS) and converts the Java code into bytecode.
 
 
-     
+ .java (source) 
+→ javac → 
+.class (bytecode) 
+→ Class Loader (JVM) 
+→ Bytecode Verifier 
+→ Interpreter / JIT 
+→ Runtime (JVM) 
+→ Machine Code 
+→ CPU executes
+
+----------------------------------------------------------------------------------
+ What’s happening behind the scenes?
+
+The javac compiler (present in JDK’s bin/ folder) reads your .java file.
+
+It converts the source code into a .class file.
+
+This .class file contains Bytecode, not real machine code.
+
+This .class file is now ready to be passed to the JVM.
+
+Now JVM enters the scene :-
+
+java Machan // code 
+     This java command is also part of the JDK's bin/ folder, but it belongs to JRE.
+Once the .class file is passed to JVM:
+
+Class Loader loads the .class file into memory.
+
+Bytecode Verifier checks if it’s safe to run.
+
+Interpreter/JIT converts it to machine code.
+
+Runtime executes it and interacts with your system (heap, threads, GC).
+
+CPU runs it. 
 ---------------------------------------------------------------------------------------
+Difference Between the JVM , JRE , JDK :-
+
+JVM:-
+it is an abstract machine.  it doesn't physically exist.
+* It is a specification that provides a runtime environment in which Java bytecode can be executed. 
+
+* NOTE :-
+         JVM, JRE, and JDK are platform dependent because the configuration of each OS 
+is different from that of others. However, Java is platform independent
+
+JRE :-
+    It physically exists. It contains a set of libraries + other files that the JVM uses at runtime.
+
+JDK:-
+         The Java Development Kit (JDK) is a software development environment that is used to develop Java applications and applets.
+It physically exists. It contains JRE + development tools.
+
 
