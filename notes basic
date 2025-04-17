@@ -360,4 +360,14 @@ JDK:-
          The Java Development Kit (JDK) is a software development environment that is used to develop Java applications and applets.
 It physically exists. It contains JRE + development tools.
 
+------------------------------------------------------------------------------------------------------------------------
+Types of Variables
+There are three types of variables in Java:
+
+*local variable
+*instance variable
+*static variable
+
+
+
 
